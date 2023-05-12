@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="/home">Cadastro de Carro</a>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Modelo</th>
+                <th>Ano</th>
+                <th>Cor</th>
+                <th>Fabricante</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr data-th-each="carro: ${carros}">
+                <td data-th-text="${carro.id}"></td>
+                <td data-th-text="${carro.modelo}"></td>
+                <td data-th-text="${carro.ano}"></td>
+                <td data-th-text="${carro.cor}"></td>
+                <td data-th-text="${carro.fabricante}"></td>
+                <td><a th:href="@{'/excluir/'+${carro.id}}">Excluir</td>
+                <td><a th:href="@{'/home/editar/'+${carro.id}}">Editar</td>
+            </tr>
+        </tbody>
+    </table>
+    
+</body>
+</html>
